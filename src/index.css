@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3B82F6;
+  --secondary: #0EA5E9;
+  --accent: #64748B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply antialiased;
+}
+
+section {
+  @apply py-20 px-4 md:px-8 max-w-7xl mx-auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl mb-6 relative inline-block;
+}
+
+h2::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-1 bg-blue-500 rounded transform -translate-y-2;
+}
+
+h3 {
+  @apply text-xl md:text-2xl;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+.btn {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-blue-500 hover:bg-blue-600 text-white shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white;
+}
+
+.section-title {
+  @apply text-center mb-16;
+}
+
+.section-title h2 {
+  @apply inline-block relative;
+}
+
+.section-title h2::after {
+  @apply mx-auto right-0;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden;
+}
+
+.skill-bar {
+  @apply h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+}
+
+.skill-progress {
+  @apply h-full bg-blue-500 rounded-full transition-all duration-1000;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Staggered animation delay for list items */
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
